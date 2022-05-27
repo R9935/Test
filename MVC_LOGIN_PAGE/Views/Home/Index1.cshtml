@@ -1,0 +1,232 @@
+﻿@model MVC_LOGIN_PAGE.Models.AddEmp
+@{
+    ViewBag.Title = "Index1";
+}
+
+
+
+
+<h1>Register  Details</h1>
+@if (ViewBag.update == null)
+{
+    <div class="bg-info">
+        <h2 align="center" class="text-danger">Register New Details</h2>
+    </div>
+
+}
+else
+{
+    <h2 align="center" class="text-danger">Update Details</h2>
+}
+<style>
+    .error {
+        color: #4cff00;
+    }
+    .panel{
+        text-align:center;
+    }
+
+</style>
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/metisMenu.min.css" rel="stylesheet" />
+
+<link href="~/Content/css/startmin.css" rel="stylesheet" />
+<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+
+<div align="center" class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Forms</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row" align="center" >
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Basic Form Elements
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                           @using (Html.BeginForm("Index1", "Home", FormMethod.Post))
+            {
+            <div align="center" class="bg-danger"style="background-image: url('../../Models/Image/sunflower.jpg');">
+
+                <div class="mb-3">
+                    <lable class="form-group"></lable>
+
+                    @Html.TextBoxFor(m => m.E_ID, new { @class = "form-control", @placeholder = "ID", @type = "hidden" })
+
+                </div>
+                <br />
+                <div class="mb-3">
+                    <lable class="form-group">E_Name</lable>
+
+                    @Html.TextBoxFor(m => m.E_Name, new { @class = "form-control", @placeholder = "Enter Your Name" ,@required="required"})
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+                </div>
+                <br />
+
+                <div class="mb-3">
+                    <lable class="form-group">E_Email_Id</lable>
+
+                    @Html.TextBoxFor(m => m.E_Email_Id, new { @class = "form-control", @placeholder = "Enter your Email_Id", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                </div>
+                <br />
+                <div class="mb-3">
+                    <lable class="form-group">E_Company</lable>
+
+                    @Html.TextBoxFor(m => m.E_Company, new { @class = "form-control", @placeholder = "Company", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                </div>
+                <br />
+                <div class="mb-3">
+                    <lable class="form-group">E_Dept</lable>
+
+                    @Html.TextBoxFor(m => m.E_Dept, new { @class = "form-control", @placeholder = "Dept", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                </div>
+                <br />
+                <div class="mb-3">
+                    <lable class="form-group">E_Salary</lable>
+
+                    @Html.TextBoxFor(m => m.E_Salary, new { @class = "form-control", @placeholder = "Salary", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                </div>
+                <br />
+                <div class="mb-3">
+                    <lable class="form-group">UserName</lable>
+
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                </div>
+                <br />
+                <div class="mb-3">
+                    <lable class="form-group">password</lable>
+                    <br />
+                    @Html.TextBoxFor(m => m.password, new { @class = "form-control", @placeholder = "password", @required = "required" })
+                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                </div>
+                <br />
+                <div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <a class="btn btn-warning" href="@Url.Action("Login" , "Home")">Login</a>
+                </div>
+            </div>
+            }
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+
+
+<script src="~/Content/Appfolder/js/jquery.min.js"></script>
+
+<script src="~/Content/Appfolder/js/bootstrap.min.js"></script>
+<script src="~/Content/Appfolder/js/metisMenu.min.js"></script>
+<script src="~/Content/Appfolder/js/startmin.js"></script>
+
+
+
+
+
+
+
+
+        @*@using (Html.BeginForm("Index1", "Home", FormMethod.Post))
+                            {
+                            <div align="center" class="bg-danger" style="background-image: url('../../Models/Image/sunflower.jpg');">
+
+                                <div class="mb-3">
+                                    <lable class="form-group"></lable>
+
+                                    @Html.TextBoxFor(m => m.E_ID, new { @class = "form-control", @placeholder = "ID", @type = "hidden" })
+
+                                </div>
+                                <br />
+                                <div class="mb-3">
+                                    <lable class="form-group">E_Name</lable>
+
+                                    @Html.TextBoxFor(m => m.E_Name, new { @class = "form-control", @placeholder = "Enter Your Name" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+                                </div>
+                                <br />
+
+                                <div class="mb-3">
+                                    <lable class="form-group">E_Email_Id</lable>
+
+                                    @Html.TextBoxFor(m => m.E_Email_Id, new { @class = "form-control", @placeholder = "Enter your Email_Id" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                                </div>
+                                <br />
+                                <div class="mb-3">
+                                    <lable class="form-group">E_Company</lable>
+
+                                    @Html.TextBoxFor(m => m.E_Company, new { @class = "form-control", @placeholder = "Company" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                                </div>
+                                <br />
+                                <div class="mb-3">
+                                    <lable class="form-group">E_Dept</lable>
+
+                                    @Html.TextBoxFor(m => m.E_Dept, new { @class = "form-control", @placeholder = "Dept" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                                </div>
+                                <br />
+                                <div class="mb-3">
+                                    <lable class="form-group">E_Salary</lable>
+
+                                    @Html.TextBoxFor(m => m.E_Salary, new { @class = "form-control", @placeholder = "Salary" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                                </div>
+                                <br />
+                                <div class="mb-3">
+                                    <lable class="form-group">UserName</lable>
+
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                                </div>
+                                <br />
+                                <div class="mb-3">
+                                    <lable class="form-group">password</lable>
+                                    <br />
+                                    @Html.TextBoxFor(m => m.password, new { @class = "form-control", @placeholder = "password" })
+                                    @Html.ValidationMessageFor(m => m.E_Name, "", new { @class = "" })
+
+                                </div>
+                                <br />
+                                <div>
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="reset" class="btn btn-primary">Reset</button>
+                                    <a class="btn btn-warning" href="@Url.Action("Login" , "Home")">Login</a>
+                                </div>
+                            </div>
+                            }*@
+

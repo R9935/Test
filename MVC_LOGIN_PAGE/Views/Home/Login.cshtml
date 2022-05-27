@@ -1,0 +1,119 @@
+﻿@model MVC_LOGIN_PAGE.Models.AddEmp
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+
+}
+
+
+<h2 align="center">Login</h2>
+
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/css/metisMenu.min.css" rel="stylesheet" />
+<link href="~/Content/css/startmin.css" rel="stylesheet" />
+<link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+<body >
+    <div class="container" style="background-image: url('../../Models/Image/sunflower.jpg');">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading" style="background-color:aqua;">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body" style="background-image: url('../../Models/Image/sunflower.jpg');">
+                        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                        {
+                            <fieldset>
+                                <div class="form-group">
+                                    <div class="mb-3">
+                                        <lable class="form-group">UserName</lable>
+                                        <span>@TempData["Email Invalid "]</span>
+
+                                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName", @required = "required" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="mb-3">
+                                        <lable class="form-group">password</lable>
+                                        <span>@TempData["Password"] </span>
+
+                                        @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "password" })
+                                        @Html.ValidationMessageFor(m => m.password, "", new { @class = "" })
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-success">Login</button>
+
+                                    <button type="reset" class="btn btn-danger">Re-Set</button>
+                                    <a class="btn btn-primary" href="@Url.Action("SignUp" , "Home")">New User Register Here</a>
+
+                                </div>
+                            </fieldset>
+                        }
+                    </div>
+                </div>
+                <p style="font-size:50px;color:#000000;font-weight:bold; text-align:center">Chetu Inc.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                    {
+                    <div align="center" class="bg-warning">
+                        <img src="~/Models/Image/sunflower.jpg" />
+                        <br />
+                        <div class="mb-3">
+                            <lable class="form-group">UserName</lable>
+                            <span>@TempData["Email Invalid "]</span>
+
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "UserName", @required = "required" })
+
+                        </div>
+                        <br />
+                        <div class="mb-3">
+                            <lable class="form-group">password</lable>
+                            <span>@TempData["Password"] </span>
+
+                            @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "password" })
+                            @Html.ValidationMessageFor(m => m.password, "", new { @class = "" })
+                        </div>
+                        <br />
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-success">Login</button>
+
+                            <button type="reset" class="btn btn-danger">Re-Set</button>
+                            <a class="btn btn-primary" href="@Url.Action("SignUp" , "Home")">SignUp</a>
+
+                        </div>
+                        <br />
+                    </div>
+
+                    }*@
